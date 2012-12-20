@@ -1,0 +1,47 @@
+module add git
+git config --global user.name "<name>"
+git config --global user.email "<email>"
+git config --global credential.helper cache
+CONFIGURE SSH:
+   cd ~/.ssh ; ls ; mkdir key_backup ; cp id_rsa* key_backup ; rm id_rsa*
+   ssh-keygen -t rsa -C "<email>"
+   <<Answer questions>>
+   <<Use 'ssh-keygen -p' for changing passphrase>>
+   ssh -T git@github.com
+MAKE NEW REPO:
+   git init
+   touch README
+   <<mkdir and cd to where repo should be>>
+ATTACH A REMOTE TO AN EXISTING REPO:
+   cd .../repo
+   git remote add <remote-name> ssh://<username>@<repo-path>
+   git remote -v
+   git remote show <remote-name>
+FETCH REPO-INFORMATION AND DATA:
+   git fetch <remote-name>
+CLONE REPO:
+   git clone <ssh-path from github-webpage: git@github...>
+PUSH/PULL:
+   git status
+   git add <file-path>
+   git pull -u <remote-name> <branch-name>
+   git push -u <remote-name> <branch-name> <tag-name>
+   git rm <path>
+   git commit
+   git commit --amend
+   git reset HEAD <file>
+   git checkout -- benchmarks.rb
+   <make a .gitignore-file to avoid adding files according some pattern>
+   git diff --staged
+TAGS:
+   git tag -a <version-label, e.g., v1.4> -m 'version-information'
+BRANCHING:
+   git branch <branch-name>
+   git checkout <branch-name>
+SUGGESTION:
+touch README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin <ssh-path from github-webpage: git@github...>
+git push -u origin master
