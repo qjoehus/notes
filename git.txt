@@ -7,6 +7,8 @@ CONFIGURE SSH:
    ssh-keygen -t rsa -C "<email>"
    <<Answer questions>>
    <<Use 'ssh-keygen -p' for changing passphrase>>
+   <<Add the public ssh-key from ~/.ssh/id_rsa.pub to the github-website>>
+   <<Logg out and in to make changes stick>>
    ssh -T git@github.com
 MAKE NEW REPO:
    git init
